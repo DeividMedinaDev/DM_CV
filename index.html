@@ -37,12 +37,9 @@
 
         .blob {
             position: fixed;
-            width: 500px;
-            height: 500px;
+            width: 500px; height: 500px;
             background: linear-gradient(180deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
-            filter: blur(80px);
-            border-radius: 50%;
-            z-index: -1;
+            filter: blur(80px); border-radius: 50%; z-index: -1;
             animation: float 20s infinite ease-in-out;
         }
 
@@ -65,7 +62,7 @@
             box-shadow: var(--card-shadow);
             padding: 40px;
             margin-bottom: 40px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         header { display: flex; align-items: center; gap: 40px; padding-bottom: 40px; }
@@ -83,7 +80,7 @@
             margin-bottom: 10px;
         }
 
-        .hero-content .subtitle { font-size: 1.5rem; color: var(--accent-primary); margin-bottom: 20px; font-weight: 500; }
+        .subtitle { font-size: 1.5rem; color: var(--accent-primary); margin-bottom: 20px; font-weight: 500; }
 
         .contact-grid { display: flex; gap: 20px; flex-wrap: wrap; }
         .contact-item {
@@ -96,7 +93,6 @@
             font-size: 1.8rem; color: var(--text-main); margin-bottom: 30px;
             display: flex; align-items: center; gap: 15px;
         }
-
         .section-title::after { content: ''; height: 1px; flex: 1; background: linear-gradient(to right, var(--glass-border), transparent); }
         .section-title i { color: var(--accent-secondary); }
 
@@ -171,7 +167,7 @@
         <section class="glass-card">
             <h2 class="section-title"><i class="fa-regular fa-user"></i> Professional Summary</h2>
             <p class="summary-text">
-                Senior Software Engineer with 6+ years of experience in the <b>.NET ecosystem</b>, with a solid track record working across multiple versions <b>up to .NET 10</b>. Specialized in architecting scalable backend services and APIs with a focus on <b>Test-Driven Development (TDD)</b> and Clean Architecture. Experienced in cloud modernization and microservices deployment across Azure and AWS, prioritizing technical excellence and high-quality code. Skilled at leveraging <b>AI-driven tools</b> to streamline development and solving complex business challenges with distributed systems.
+                Senior Software Engineer with 6+ years of experience in the <b>.NET ecosystem</b>, having worked with versions <b>up to .NET 10</b>. Specialized in architecting scalable backend services and APIs with a focus on <b>Test-Driven Development (TDD)</b> and Clean Architecture. Expert in cloud modernization and microservices deployment across Azure and AWS (Lambda, EC2). Passionate about technical excellence and leveraging <b>AI-driven tools</b> to optimize the SDLC and solve complex enterprise challenges.
             </p>
         </section>
 
@@ -184,9 +180,9 @@
                         <span class="tag">.NET (Core / 6 / 8 / 10)</span>
                         <span class="tag">C# (Stable Versions)</span>
                         <span class="tag">TDD (Unit Testing)</span>
-                        <span class="tag">Clean Architecture</span>
+                        <span class="tag">Clean Architecture & DDD</span>
                         <span class="tag">RabbitMQ & Redis</span>
-                        <span class="tag">REST APIs & Swagger</span>
+                        <span class="tag">Microservices (CQRS)</span>
                     </div>
                 </div>
                 <div class="skill-category">
@@ -194,7 +190,7 @@
                     <div class="tags">
                         <span class="tag">Azure (AKS, Service Bus)</span>
                         <span class="tag">AWS (Lambda, EC2, Route53)</span>
-                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">GitHub Actions (CI/CD)</span>
                         <span class="tag">Terraform (IaC)</span>
                         <span class="tag">Docker & Kubernetes</span>
                     </div>
@@ -214,6 +210,7 @@
         <section class="glass-card">
             <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
             <div class="timeline">
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="job-header">
@@ -224,9 +221,9 @@
                         <div class="job-date">Nov 2025 - Jan 2026</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Developed backend services using <b>.NET 10</b>, ensuring high standards of code quality and <b>TDD</b> implementation.</li>
-                        <li>Built and maintained <b>CI/CD pipelines</b> using GitHub Actions to automate software delivery for international clients.</li>
-                        <li>Implemented <b>AI-driven development</b> strategies to increase efficiency in code refactoring and technical documentation tasks.</li>
+                        <li>Developed backend services using <b>.NET 10</b> for US-based clients, ensuring 100% business logic coverage through <b>TDD</b>.</li>
+                        <li>Automated CI/CD workflows using <b>GitHub Actions</b> and managed cloud infrastructure with <b>Terraform</b>.</li>
+                        <li>Integrated <b>AI tools</b> to optimize code refactoring and technical documentation processes.</li>
                     </ul>
                 </div>
 
@@ -240,12 +237,89 @@
                         <div class="job-date">Sept 2023 - Sept 2025</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Designed distributed microservices using <b>C# and .NET Core</b>, leveraging <b>RabbitMQ</b> for asynchronous messaging.</li>
-                        <li>Utilized <b>AWS services (EC2, Lambda)</b> alongside Azure to support multi-cloud enterprise solutions.</li>
-                        <li>Ensured system scalability and high availability using <b>Redis</b> for distributed caching.</li>
+                        <li>Designed distributed microservices using <b>C# and .NET Core</b>, leveraging <b>RabbitMQ</b> for event-driven architecture.</li>
+                        <li>Managed <b>AWS resources (EC2, Lambda)</b> alongside Azure to support multi-cloud enterprise solutions.</li>
+                        <li>Optimized system performance for high-scale consumer platforms using <b>Redis</b> caching.</li>
                     </ul>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Engineer / Development Engineer</div>
+                            <div class="job-company">SoftwareOne</div>
+                        </div>
+                        <div class="job-date">Oct 2021 - Sept 2023</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Modernized legacy monoliths into <b>microservices architectures</b> using Clean Architecture principles.</li>
+                        <li>Optimized <b>SQL Server</b> performance and application responsiveness for high-traffic environments.</li>
+                        <li>Collaborated in Agile teams to deliver technical improvements and feature enhancements across the SDLC.</li>
+                    </ul>
                 </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">.NET Developer</div>
+                            <div class="job-company">In Motion</div>
+                        </div>
+                        <div class="job-date">Apr 2021 - Oct 2021</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Developed full-stack web applications using <b>ASP.NET</b> and relational database schemas.</li>
+                        <li>Active participation in Scrum ceremonies and sprint planning.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Desarrollador de software .NET</div>
+                            <div class="job-company">ITBF Consulting</div>
+                        </div>
+                        <div class="job-date">Jan 2020 - Apr 2021</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Built enterprise web applications with <b>ASP.NET</b> and managed data reporting with <b>SSRS</b>.</li>
+                        <li>Translated business requirements into technical database models and specifications.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Software Consultant</div>
+                            <div class="job-company">Periferia IT Group</div>
+                        </div>
+                        <div class="job-date">May 2019 - Oct 2019</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Provided technical consulting and development using the Microsoft .NET stack.</li>
+                        <li>Adhered to code quality standards via Git and Agile development practices.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Desarrollador Web</div>
+                            <div class="job-company">NEURAL-IT</div>
+                        </div>
+                        <div class="job-date">Aug 2016 - Mar 2017</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Developed responsive web applications using <b>ASP.NET</b>, HTML, CSS, and JavaScript.</li>
+                        <li>Designed and optimized initial relational database structures for client projects.</li>
+                    </ul>
+                </div>
+
+            </div>
         </section>
 
         <div class="edu-grid">
