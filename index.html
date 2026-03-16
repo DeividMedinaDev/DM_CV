@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deivid Medina | Senior Software Engineer</title>
+    <title>Deivid Medina | Senior Backend & Azure Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,16 +13,15 @@
             --bg-dark: #0f172a;
             --bg-gradient: radial-gradient(circle at top right, #1e3a8a, #0f172a 60%);
             --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.1);
             --accent-primary: #38bdf8;
             --accent-secondary: #818cf8;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --card-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Outfit', sans-serif;
             background: var(--bg-dark);
@@ -31,125 +29,108 @@
             background-attachment: fixed;
             color: var(--text-main);
             line-height: 1.6;
-            min-height: 100vh;
             overflow-x: hidden;
         }
 
-        .blob {
-            position: fixed;
-            width: 500px; height: 500px;
-            background: linear-gradient(180deg, rgba(56, 189, 248, 0.15), rgba(129, 140, 248, 0.15));
-            filter: blur(80px); border-radius: 50%; z-index: -1;
-            animation: float 20s infinite ease-in-out;
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 
-        .blob-1 { top: -100px; left: -100px; }
-        .blob-2 { bottom: -100px; right: -100px; animation-delay: -10s; background: linear-gradient(180deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.15)); }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(30px, 50px); }
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-
+        /* Estilo mejorado de Tarjetas */
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
-            border-radius: 24px;
+            border-radius: 28px;
             box-shadow: var(--card-shadow);
-            padding: 40px;
-            margin-bottom: 40px;
-            transition: transform 0.3s ease;
+            padding: 45px;
+            margin-bottom: 35px;
+            transition: transform 0.3s ease, border 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.3);
         }
 
-        header { display: flex; align-items: center; gap: 40px; padding-bottom: 40px; }
+        /* Header / Perfil */
+        header { display: flex; align-items: center; gap: 50px; margin-bottom: 20px; }
         .profile-img {
-            width: 180px; height: 180px; border-radius: 50%; object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 30px rgba(56, 189, 248, 0.3);
+            width: 160px; height: 160px; border-radius: 50%; object-fit: cover;
+            border: 3px solid var(--accent-primary);
+            box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);
         }
-
         .hero-content h1 {
-            font-size: 3.5rem; font-weight: 700;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            font-size: 3.8rem; line-height: 1; margin-bottom: 8px;
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-
-        .subtitle { font-size: 1.5rem; color: var(--accent-primary); margin-bottom: 20px; font-weight: 500; }
-
-        .contact-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        .subtitle { font-size: 1.6rem; color: var(--accent-primary); font-weight: 500; margin-bottom: 15px; }
+        
+        .contact-grid { display: flex; gap: 15px; flex-wrap: wrap; }
         .contact-item {
-            display: flex; align-items: center; gap: 10px; padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.05); border-radius: 50px;
-            font-size: 0.95rem; color: var(--text-muted); text-decoration: none;
+            display: flex; align-items: center; gap: 8px; padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05); border-radius: 12px;
+            font-size: 0.9rem; color: var(--text-muted); text-decoration: none;
+            transition: background 0.3s ease;
         }
+        .contact-item:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
 
+        /* Secciones */
         .section-title {
-            font-size: 1.8rem; color: var(--text-main); margin-bottom: 30px;
-            display: flex; align-items: center; gap: 15px;
+            font-size: 1.5rem; color: #fff; margin-bottom: 25px;
+            display: flex; align-items: center; gap: 12px; text-transform: uppercase; letter-spacing: 1px;
         }
-        .section-title::after { content: ''; height: 1px; flex: 1; background: linear-gradient(to right, var(--glass-border), transparent); }
-        .section-title i { color: var(--accent-secondary); }
+        .section-title i { color: var(--accent-secondary); font-size: 1.2rem; }
 
-        .summary-text { font-size: 1.1rem; color: var(--text-muted); line-height: 1.8; }
-
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .skill-category h3 { color: var(--accent-primary); margin-bottom: 15px; font-size: 1.2rem; }
-
-        .tags { display: flex; flex-wrap: wrap; gap: 10px; }
+        /* Skills */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .skill-category h3 { font-size: 1.1rem; color: var(--accent-primary); margin-bottom: 15px; }
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .tag {
-            padding: 6px 14px; background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 8px;
-            font-size: 0.9rem; color: var(--text-muted);
+            padding: 6px 12px; background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px;
+            font-size: 0.85rem; color: #d1d5db;
         }
 
-        .timeline { position: relative; padding-left: 30px; }
+        /* Timeline Mejorada */
+        .timeline { position: relative; padding-left: 20px; }
         .timeline::before {
-            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
-            background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary), transparent);
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 1px;
+            background: linear-gradient(to bottom, var(--accent-primary), transparent);
         }
-
-        .timeline-item { position: relative; margin-bottom: 50px; }
+        .timeline-item { position: relative; margin-bottom: 45px; padding-left: 25px; }
         .timeline-dot {
-            position: absolute; left: -36px; top: 5px; width: 14px; height: 14px;
-            background: var(--bg-dark); border: 2px solid var(--accent-primary);
-            border-radius: 50%; box-shadow: 0 0 10px var(--accent-primary);
+            position: absolute; left: -25px; top: 8px; width: 10px; height: 10px;
+            background: var(--accent-primary); border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-primary);
         }
-
-        .job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px; flex-wrap: wrap; gap: 10px; }
-        .job-title { font-size: 1.4rem; font-weight: 600; color: var(--text-main); }
-        .job-company { color: var(--accent-secondary); font-size: 1.1rem; }
-        .job-date { background: rgba(255, 255, 255, 0.05); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; color: var(--text-muted); }
-
-        .responsibilities { list-style: none; color: var(--text-muted); }
-        .responsibilities li { position: relative; padding-left: 25px; margin-bottom: 12px; }
-        .responsibilities li::before { content: '▹'; position: absolute; left: 0; color: var(--accent-primary); }
+        .job-header { margin-bottom: 12px; }
+        .job-title { font-size: 1.3rem; font-weight: 600; color: #fff; }
+        .job-company { color: var(--accent-secondary); font-weight: 500; font-size: 1rem; margin-bottom: 4px; }
+        .job-date { font-size: 0.85rem; color: var(--text-muted); opacity: 0.8; }
+        
+        .responsibilities { list-style: none; margin-top: 10px; }
+        .responsibilities li { 
+            position: relative; padding-left: 20px; margin-bottom: 8px; 
+            color: var(--text-muted); font-size: 0.95rem;
+        }
+        .responsibilities li::before { 
+            content: '→'; position: absolute; left: 0; color: var(--accent-primary); 
+        }
 
         @media (max-width: 768px) {
-            header { flex-direction: column; text-align: center; }
-            .hero-content h1 { font-size: 2.5rem; }
+            header { flex-direction: column; text-align: center; gap: 20px; }
+            .hero-content h1 { font-size: 2.8rem; }
             .contact-grid { justify-content: center; }
         }
     </style>
 </head>
-
 <body>
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-
     <div class="container">
         <header class="glass-card">
-            <div class="profile-img-container">
-                <img src="foto.jpg" alt="Deivid Medina" class="profile-img">
-            </div>
+            <img src="foto.jpg" alt="Deivid Medina" class="profile-img">
             <div class="hero-content">
                 <h1>DEIVID MEDINA</h1>
-                <div class="subtitle">Senior Software Engineer</div>
+                <div class="subtitle">Senior Backend & Azure Engineer</div>
                 <div class="contact-grid">
                     <a href="mailto:Deividmedinahernandez@gmail.com" class="contact-item">
                         <i class="fa-regular fa-envelope"></i> Deividmedinahernandez@gmail.com
@@ -165,158 +146,153 @@
         </header>
 
         <section class="glass-card">
-            <h2 class="section-title"><i class="fa-regular fa-user"></i> Professional Summary</h2>
-            <p class="summary-text">
-                Senior Backend Engineer with 6+ years of experience within the <b>.NET ecosystem (.NET 8/10)</b> and <b>Azure Cloud</b>. 
-                Focused on architecting scalable backend services and APIs with a strong emphasis on <b>Test-Driven Development (TDD)</b> 
-                and Clean Architecture. Experienced in cloud modernization and microservices deployment across Azure environments, 
-                leveraging <b>AI-driven tools</b> to optimize the SDLC and solve complex enterprise challenges.
+            <h2 class="section-title"><i class="fa-regular fa-user"></i> Profile</h2>
+            <p class="summary-text" style="color: var(--text-muted); font-size: 1.05rem;">
+                Senior Backend Engineer with over 6 years of experience in the <b>.NET ecosystem (.NET 8/10)</b> and <b>Azure Cloud</b>. 
+                Focused on architecting scalable backend services and APIs with an emphasis on <b>Clean Architecture, SOLID, and TDD</b>. 
+                Experienced in cloud modernization and microservices deployment, delivering high-availability solutions for 
+                luxury travel, education, and enterprise sectors.
             </p>
         </section>
 
         <section class="glass-card">
-            <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical Expertise</h2>
+            <h2 class="section-title"><i class="fa-solid fa-code"></i> Core Expertise</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Backend & Architecture</h3>
                     <div class="tags">
                         <span class="tag">.NET 8/10 & ASP.NET Core</span>
-                        <span class="tag">C# (Clean Code & SOLID)</span>
+                        <span class="tag">C# (Clean Code)</span>
                         <span class="tag">Entity Framework Core</span>
-                        <span class="tag">MediatR (CQRS Pattern)</span>
-                        <span class="tag">FluentValidation & AutoMapper</span>
+                        <span class="tag">MediatR (CQRS)</span>
                         <span class="tag">Clean Architecture & DDD</span>
                         <span class="tag">TDD (xUnit / Moq)</span>
                     </div>
                 </div>
-        
                 <div class="skill-category">
                     <h3>Cloud & Azure Engineering</h3>
                     <div class="tags">
-                        <span class="tag">Azure Functions & App Services</span>
-                        <span class="tag">AKS (Kubernetes) & Docker</span>
-                        <span class="tag">Azure Service Bus & RabbitMQ</span>
-                        <span class="tag">OAuth2 / JWT / OpenID Connect</span>
-                        <span class="tag">Managed Identity & Key Vault</span>
+                        <span class="tag">Azure Functions & AKS</span>
+                        <span class="tag">Service Bus & RabbitMQ</span>
+                        <span class="tag">OAuth2 / JWT / Azure AD</span>
                         <span class="tag">Terraform (IaC)</span>
                         <span class="tag">Azure Monitor & App Insights</span>
+                        <span class="tag">Docker & K8s</span>
                     </div>
                 </div>
-        
                 <div class="skill-category">
-                    <h3>Data, DevOps & Tools</h3>
+                    <h3>Data & DevOps</h3>
                     <div class="tags">
-                        <span class="tag">SQL Server (Query Tuning)</span>
-                        <span class="tag">PostgreSQL & Redis Caching</span>
-                        <span class="tag">Azure DevOps & GitHub Actions</span>
-                        <span class="tag">SonarQube (Code Quality)</span>
-                        <span class="tag">OpenTelemetry (Observability)</span>
-                        <span class="tag">GitHub Copilot / AI Productivity</span>
-                        <span class="tag">Agile (Scrum / Jira)</span>
+                        <span class="tag">SQL Server & Azure SQL</span>
+                        <span class="tag">PostgreSQL & Redis</span>
+                        <span class="tag">Azure DevOps & CI/CD</span>
+                        <span class="tag">SonarQube</span>
+                        <span class="tag">GitHub Copilot / AI Tools</span>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="glass-card">
-            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
+            <h2 class="section-title"><i class="fa-solid fa-briefcase"></i> Experience</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="job-header">
-                        <div>
-                            <div class="job-title">Senior Backend & Azure Engineer (Contractor)</div>
-                            <div class="job-company">Talentus Global</div>
-                        </div>
+                        <div class="job-company">Talentus Global</div>
+                        <div class="job-title">Senior Backend & Azure Engineer (Contractor)</div>
                         <div class="job-date">Nov 2025 - Jan 2026</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Collaborated on the implementation of serverless components using <b>Azure Functions (Isolated Process)</b>, integrating data flows between LMS platforms (Moodle, Brightspace, Slate) and cloud-native backends.</li>
-                        <li>Contributed to the modernization of legacy services into <b>.NET 10 microservices</b>, following <b>Clean Architecture</b> principles to support high-availability educational environments.</li>
-                        <li>Applied <b>Polly</b> for retry policies and circuit breakers in API integrations, improving system resilience when communicating with external services.</li>
+                        <li>Collaborated on the implementation of serverless components using <b>Azure Functions</b>, integrating LMS platforms with cloud-native backends.</li>
+                        <li>Contributed to the modernization of legacy services into <b>.NET 10 microservices</b>, following Clean Architecture principles.</li>
+                        <li>Applied <b>Polly</b> for resilience policies in API integrations, improving system reliability.</li>
                     </ul>
                 </div>
-            
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="job-header">
-                        <div>
-                            <div class="job-title">Backend Senior Software Developer (Traveledge Project)</div>
-                            <div class="job-company">CBTW Americas | Luxury Travel Sector</div>
-                        </div>
+                        <div class="job-company">CBTW Americas | Luxury Travel Sector (Traveledge)</div>
+                        <div class="job-title">Backend Senior Software Developer</div>
                         <div class="job-date">Sept 2023 - Sept 2025</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Developed distributed backend services for <b>Traveledge</b>, a luxury travel platform, focusing on real-time booking engines and high-value transaction processing.</li>
-                        <li>Implemented event-driven microservices using <b>C# and .NET Core</b>, leveraging <b>RabbitMQ</b> for reliable asynchronous communication between inventory and payment modules.</li>
-                        <li>Optimized data access layers using <b>Entity Framework Core</b> and <b>Redis</b> caching, ensuring low-latency responses for global travel availability searches.</li>
-                        <li>Participated in the integration of secure <b>OAuth2/JWT</b> authentication flows and third-party travel APIs, maintaining high standards for sensitive data protection.</li>
+                        <li>Developed distributed backend services for luxury travel engines, focusing on real-time booking and high-value transactions.</li>
+                        <li>Implemented event-driven microservices leveraging <b>RabbitMQ</b> for asynchronous communication.</li>
+                        <li>Optimized data access layers using <b>EF Core</b> and <b>Redis</b> to reduce latency in global searches.</li>
                     </ul>
                 </div>
-            
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="job-header">
-                        <div>
-                            <div class="job-title">Software Engineer (Enterprise Solutions)</div>
-                            <div class="job-company">SoftwareOne</div>
-                        </div>
+                        <div class="job-company">SoftwareOne</div>
+                        <div class="job-title">Software Engineer (Enterprise Solutions)</div>
                         <div class="job-date">Oct 2021 - Sept 2023</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Contributed to refactoring legacy monolithic applications into <b>Microservices architectures</b>, adhering to <b>Domain-Driven Design (DDD)</b> and <b>SOLID</b> principles.</li>
-                        <li>Improved database performance in <b>SQL Server and Azure SQL</b> environments by optimizing schemas and stored procedures for financial modules.</li>
-                        <li>Supported CI/CD workflows using <b>Azure DevOps and GitHub Actions</b>, integrating <b>SonarQube</b> for automated code quality gates.</li>
+                        <li>Refactored legacy monolithic applications into <b>Microservices</b>, adhering to <b>DDD</b> and <b>SOLID</b> principles.</li>
+                        <li>Improved database performance in SQL Server and Azure SQL for financial and operational modules.</li>
+                        <li>Automated CI/CD workflows using <b>Azure DevOps</b>, integrating automated code quality gates.</li>
                     </ul>
                 </div>
-            
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="job-header">
-                        <div>
-                            <div class="job-title">.NET Developer</div>
-                            <div class="job-company">In Motion</div>
-                        </div>
+                        <div class="job-company">In Motion</div>
+                        <div class="job-title">.NET Developer</div>
                         <div class="job-date">Apr 2021 - Oct 2021</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Developed web applications using <b>ASP.NET</b> and relational database schemas, focusing on backend business logic and API development.</li>
-                        <li>Participated in <b>Scrum</b> ceremonies and sprint planning to deliver feature enhancements in a timely manner.</li>
+                        <li>Developed web applications and RESTful APIs using the ASP.NET stack.</li>
+                        <li>Participated in Agile sprints focusing on backend business logic and database management.</li>
                     </ul>
                 </div>
-            
+
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="job-header">
-                        <div>
-                            <div class="job-title">Software Developer</div>
-                            <div class="job-company">ITBF Consulting</div>
-                        </div>
-                        <div class="job-date">Jan 2020 - Apr 2021</div>
+                        <div class="job-company">Periferia IT Group</div>
+                        <div class="job-title">Software Consultant</div>
+                        <div class="job-date">May 2019 - Oct 2019</div>
                     </div>
                     <ul class="responsibilities">
-                        <li>Built enterprise web applications with <b>ASP.NET</b> and managed complex data reporting using <b>SSRS</b>.</li>
-                        <li>Translated business requirements into technical database models and SQL specifications.</li>
+                        <li>Provided technical consulting and development using the Microsoft .NET technology stack.</li>
+                        <li>Assisted in the architectural design of web-based solutions, adhering to industry best practices.</li>
+                        <li>Maintained code quality through Git version control and Agile development practices.</li>
                     </ul>
                 </div>
-            
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="job-header">
+                        <div class="job-company">NEURAL-IT</div>
+                        <div class="job-title">Web Developer</div>
+                        <div class="job-date">Aug 2016 - Mar 2017</div>
+                    </div>
+                    <ul class="responsibilities">
+                        <li>Developed responsive web applications using HTML, CSS, JavaScript, and ASP.NET.</li>
+                        <li>Designed and optimized relational database structures to support diverse application requirements.</li>
+                    </ul>
+                </div>
+
             </div>
         </section>
 
-        <div class="edu-grid">
+        <div class="skills-grid">
             <section class="glass-card">
                 <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
-                <div class="edu-item">
-                    <h3>Bachelor's Degree in Software Engineering</h3>
-                    <p>Graduated 2021</p>
-                </div>
+                <p style="color: #fff; font-weight: 500;">B.S. in Software Engineering</p>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Graduated 2021</p>
             </section>
             <section class="glass-card">
                 <h2 class="section-title"><i class="fa-solid fa-language"></i> Languages</h2>
                 <div class="tags">
                     <span class="tag">Spanish (Native)</span>
-                    <span class="tag">English (B2 - Professional Working Proficiency)</span>
+                    <span class="tag">English (B2 - Professional)</span>
                 </div>
             </section>
         </div>
