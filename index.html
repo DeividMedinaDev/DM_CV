@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deivid Medina | Azure & .NET Developer</title>
+    <title>Deivid Medina | Senior Azure .NET Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg-dark: #0f172a;
-            --sidebar-bg: rgba(30, 41, 59, 0.85);
+            --sidebar-bg: rgba(30, 41, 59, 0.9);
             --accent: #38bdf8;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -23,35 +23,35 @@
 
         .cv-wrapper {
             display: grid; grid-template-columns: 280px 1fr;
-            max-width: 1050px; margin: 0 auto;
+            max-width: 1000px; margin: 0 auto;
             background: #0f172a; min-height: 100vh;
-            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
         }
 
         /* SIDEBAR */
-        .sidebar { background: var(--sidebar-bg); padding: 30px 25px; border-right: 1px solid var(--glass-border); }
+        .sidebar { background: var(--sidebar-bg); padding: 35px 25px; border-right: 1px solid var(--glass-border); }
         .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent); display: block; margin: 0 auto 25px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
         .sidebar-section { margin-bottom: 25px; }
         .sidebar-title { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; border-bottom: 1px solid var(--glass-border); padding-bottom: 5px; }
         
-        .contact-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.78rem; margin-bottom: 8px; text-decoration: none; }
+        .contact-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.78rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
         .contact-item i { color: var(--accent); width: 15px; text-align: center; }
 
         .tag-cloud { display: flex; flex-wrap: wrap; gap: 5px; }
         .tag { background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); padding: 3px 8px; border-radius: 5px; font-size: 0.7rem; color: #e2e8f0; }
 
         /* MAIN CONTENT */
-        .main-content { padding: 45px 50px; }
+        .main-content { padding: 40px 50px; }
         header { margin-bottom: 25px; }
         header h1 { font-size: 3rem; letter-spacing: -1.5px; margin-bottom: 5px; line-height: 1; }
         .subtitle { color: var(--accent); font-size: 1.3rem; font-weight: 500; }
 
-        .summary-text { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 30px; text-align: justify; line-height: 1.55; }
+        .summary-text { color: var(--text-muted); font-size: 0.88rem; margin-bottom: 30px; text-align: justify; line-height: 1.5; }
 
         .section-header { display: flex; align-items: center; gap: 10px; font-size: 1.1rem; color: #fff; margin-bottom: 20px; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); padding-bottom: 6px; letter-spacing: 1px; }
         .section-header i { color: var(--accent); }
 
-        .experience-item { position: relative; padding-left: 20px; border-left: 1px solid var(--glass-border); padding-bottom: 20px; }
+        .experience-item { position: relative; padding-left: 20px; border-left: 1px solid var(--glass-border); padding-bottom: 18px; }
         .experience-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent); }
         .job-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
         .job-company { font-weight: 700; color: #fff; font-size: 0.95rem; }
@@ -59,7 +59,7 @@
         .job-role { color: var(--accent); font-size: 0.85rem; font-weight: 600; margin-bottom: 6px; }
         
         .res-list { list-style: none; }
-        .res-list li { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px; position: relative; padding-left: 12px; line-height: 1.45; }
+        .res-list li { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px; position: relative; padding-left: 12px; line-height: 1.4; }
         .res-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
         @media print {
@@ -70,6 +70,11 @@
             .main-content { padding: 30px; }
             .subtitle, .sidebar-title, .job-role, .section-header i, .contact-item i { color: #0284c7 !important; }
         }
+
+        @media (max-width: 768px) {
+            .cv-wrapper { grid-template-columns: 1fr; }
+            .sidebar { border-right: none; border-bottom: 1px solid var(--glass-border); }
+        }
     </style>
 </head>
 <body>
@@ -79,8 +84,8 @@
         <img src="foto.jpg" alt="Deivid Medina" class="profile-img">
         
         <div class="sidebar-section">
-            <h3 class="sidebar-title"><i class="fa-solid fa-address-card"></i> Contact</h3>
-            <div class="contact-item"><i class="fa-solid fa-phone"></i> (+57) 322 438 8760 [cite: 101]</div>
+            <h3 class="sidebar-title">Contact</h3>
+            <div class="contact-item"><i class="fa-solid fa-phone"></i> (+57) 322 438 8760</div>
             <div class="contact-item"><i class="fa-regular fa-envelope"></i> Deividmedinahernandez@gmail.com</div>
             <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</div>
             <a href="https://deividmedinadev.github.io/DM_CV/" class="contact-item" style="text-decoration: none;">
@@ -89,108 +94,108 @@
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title"><i class="fa-solid fa-certificate"></i> Certifications </h3>
+            <h3 class="sidebar-title">Certifications</h3>
             <p style="font-size: 0.72rem; font-weight: 600; color: #fff; margin-bottom: 4px;">Azure Fundamentals (AZ-900)</p>
             <p style="font-size: 0.72rem; font-weight: 600; color: #fff; margin-bottom: 4px;">SOLID Principles (C#)</p>
             <p style="font-size: 0.72rem; font-weight: 600; color: #fff;">Clean Code (C#)</p>
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title"><i class="fa-solid fa-screwdriver-wrench"></i> Technical Skills [cite: 103]</h3>
+            <h3 class="sidebar-title">Technical Skills</h3>
             <div class="tag-cloud">
-                <span class="tag">.NET 8/10 [cite: 104]</span> <span class="tag">Azure Functions [cite: 104]</span>
-                <span class="tag">AKS [cite: 105]</span> <span class="tag">Terraform [cite: 106]</span> 
-                <span class="tag">C# [cite: 107]</span> <span class="tag">Minimal APIs [cite: 108]</span> 
-                <span class="tag">Clean Architecture [cite: 108]</span> <span class="tag">DDD [cite: 127]</span> 
-                <span class="tag">T-SQL [cite: 128]</span> <span class="tag">PL-SQL [cite: 129]</span>
-                <span class="tag">Azure Service Bus [cite: 131]</span> <span class="tag">Redis [cite: 132]</span>
-                <span class="tag">CI/CD [cite: 135]</span> <span class="tag">SQL Server [cite: 135]</span> 
-                <span class="tag">Azure Cosmos DB [cite: 136]</span>
+                <span class="tag">.NET 8/10</span> <span class="tag">Azure Functions</span>
+                <span class="tag">AKS</span> <span class="tag">Terraform</span> 
+                <span class="tag">C#</span> <span class="tag">Minimal APIs</span> 
+                <span class="tag">Clean Architecture</span> <span class="tag">DDD</span> 
+                <span class="tag">T-SQL</span> <span class="tag">PL-SQL</span>
+                <span class="tag">Azure Service Bus</span> <span class="tag">Redis</span>
+                <span class="tag">CI/CD</span> <span class="tag">SQL Server</span> 
+                <span class="tag">Azure Cosmos DB</span>
             </div>
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title"><i class="fa-solid fa-graduation-cap"></i> Education [cite: 139]</h3>
+            <h3 class="sidebar-title">Education</h3>
             <p style="font-size: 0.75rem; font-weight: 600; color: #fff;">B.S. Software Engineering</p>
-            <p style="font-size: 0.7rem; color: var(--text-muted);">Uniempresarial (2021) </p>
+            <p style="font-size: 0.7rem; color: var(--text-muted);">Uniempresarial (2021)</p>
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title"><i class="fa-solid fa-language"></i> Languages [cite: 144]</h3>
-            <p style="font-size: 0.75rem;">English <span style="color:var(--text-muted)">(Professional) [cite: 145]</span></p>
-            <p style="font-size: 0.75rem;">Spanish <span style="color:var(--text-muted)">(Native) [cite: 145]</span></p>
+            <h3 class="sidebar-title">Languages</h3>
+            <p style="font-size: 0.75rem;">English <span style="color:var(--text-muted)">(Professional)</span></p>
+            <p style="font-size: 0.75rem;">Spanish <span style="color:var(--text-muted)">(Native)</span></p>
         </div>
     </aside>
 
     <main class="main-content">
         <header>
-            <h1>DEIVID MEDINA [cite: 109]</h1>
-            <div class="subtitle">Senior Azure .NET Developer [cite: 110]</div>
+            <h1>DEIVID MEDINA</h1>
+            <div class="subtitle">Senior Azure .NET Developer</div>
         </header>
 
         <p class="summary-text">
-            Software Engineer specializing in leading digital transformation and cloud modernization within the .NET ecosystem[cite: 111]. 
-            I have solid experience in designing scalable, event-driven microservices in Microsoft Azure, using C#, Minimal APIs, and Clean Architecture to solve complex business challenges[cite: 112]. 
-            My focus is on DevOps, facilitating the transition from legacy systems to resilient, containerized cloud-native architectures using Kubernetes and Terraform[cite: 113]. 
-            Through the implementation of Domain-Driven Design (DDD) and database optimization with T-SQL and PL-SQL, I ensure the delivery of high-performance backend systems for global projects[cite: 114].
+            Software Engineer specializing in leading digital transformation and cloud modernization within the .NET ecosystem. 
+            I have solid experience in designing scalable, event-driven microservices in Microsoft Azure, using C#, Minimal APIs, and Clean Architecture to solve complex business challenges. 
+            My focus is on DevOps, facilitating the transition from legacy systems to resilient, containerized cloud-native architectures using Kubernetes and Terraform. 
+            Through the implementation of Domain-Driven Design (DDD) and database optimization with T-SQL and PL-SQL, I ensure the delivery of high-performance backend systems for global projects.
         </p>
 
-        <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Professional Experience [cite: 115]</h3>
+        <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Professional Experience</h3>
 
         <div class="experience-item">
-            <div class="job-meta"><span class="job-company">Talentus [cite: 116]</span><span class="job-date">Nov 2025 - Jan 2026 [cite: 118]</span></div>
-            <div class="job-role">Senior Azure .NET Developer [cite: 117]</div>
+            <div class="job-meta"><span class="job-company">Talentus</span><span class="job-date">Nov 2025 - Jan 2026</span></div>
+            <div class="job-role">Senior Azure .NET Developer</div>
             <ul class="res-list">
-                <li>Architected <b>Azure Functions</b> to integrate educational portals (Moodle, Brightspace, Slate) with cloud-native backends[cite: 119].</li>
-                <li>Modernized legacy systems into scalable <b>microservices using .NET 10</b> and Clean Architecture[cite: 120].</li>
-                <li>Collaborated to implement monitoring and alerting strategies for high-availability environments[cite: 121].</li>
+                <li>Architected <b>Azure Functions</b> to integrate educational portals (Moodle, Brightspace, Slate) with cloud-native backends.</li>
+                <li>Modernized legacy systems into scalable <b>microservices using .NET 10</b> and Clean Architecture.</li>
+                <li>Collaborated to implement monitoring and alerting strategies for high-availability environments.</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta"><span class="job-company">CBTW Americas [cite: 122]</span><span class="job-date">Sept 2023 - Sept 2025 [cite: 124]</span></div>
-            <div class="job-role">Backend Senior Software Developer - .NET [cite: 123]</div>
+            <div class="job-meta"><span class="job-company">CBTW Americas</span><span class="job-date">Sept 2023 - Sept 2025</span></div>
+            <div class="job-role">Backend Senior Software Developer - .NET</div>
             <ul class="res-list">
-                <li>Developed microservices with <b>C# and .NET Core</b> using <b>Azure Service Bus</b> for resiliency[cite: 125].</li>
-                <li>Implemented <b>Terraform</b> solutions and managed <b>AKS</b> resources for enterprise-scale applications[cite: 126].</li>
-                <li>Optimized data processing leveraging <b>SQL Server</b> and <b>Redis</b> caching strategies[cite: 126].</li>
+                <li>Developed microservices with <b>C# and .NET Core</b> using <b>Azure Service Bus</b> for resiliency.</li>
+                <li>Implemented <b>Terraform</b> solutions and managed <b>AKS</b> resources for enterprise-scale applications.</li>
+                <li>Optimized data processing leveraging <b>SQL Server</b> and <b>Redis</b> caching strategies.</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta"><span class="job-company">SoftwareOne [cite: 130]</span><span class="job-date">Oct 2021 - Sept 2023 [cite: 133]</span></div>
-            <div class="job-role">.NET Software Engineer / Development Engineer [cite: 134]</div>
+            <div class="job-meta"><span class="job-company">SoftwareOne</span><span class="job-date">Oct 2021 - Sept 2023</span></div>
+            <div class="job-role">.NET Software Engineer / Development Engineer</div>
             <ul class="res-list">
-                <li>Built robust enterprise applications for global operations using <b>Minimal APIs</b>[cite: 137].</li>
-                <li>Optimized <b>T-SQL scripts</b>, improving database query performance by 40%[cite: 138].</li>
-                <li>Developed and maintained task scheduling systems and microservices architecture[cite: 138].</li>
+                <li>Built robust enterprise applications for global operations using <b>Minimal APIs</b>.</li>
+                <li>Optimized <b>T-SQL scripts</b>, improving database query performance by 40%.</li>
+                <li>Developed and maintained task scheduling systems and microservices architecture.</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta"><span class="job-company">In Motion / Arroyo Consulting [cite: 140]</span><span class="job-date">Apr 2021 - Oct 2021 [cite: 141]</span></div>
-            <div class="job-role">.NET Developer [cite: 142]</div>
+            <div class="job-meta"><span class="job-company">In Motion / Arroyo Consulting</span><span class="job-date">Apr 2021 - Oct 2021</span></div>
+            <div class="job-role">.NET Developer</div>
             <ul class="res-list">
-                <li>Spearheaded DevOps initiatives with <b>Azure DevOps</b> and <b>PowerShell</b>[cite: 146].</li>
-                <li>Designed <b>ARM templates</b> for IaC and implemented <b>Azure Function</b> timer triggers[cite: 147].</li>
+                <li>Spearheaded DevOps initiatives with <b>Azure DevOps</b> and <b>PowerShell</b>.</li>
+                <li>Designed <b>ARM templates</b> for IaC and implemented <b>Azure Function</b> timer triggers.</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta"><span class="job-company">ITBF Consulting [cite: 148]</span><span class="job-date">Jan 2020 - Apr 2021 [cite: 149]</span></div>
-            <div class="job-role">.NET Software Developer [cite: 150]</div>
+            <div class="job-meta"><span class="job-company">ITBF Consulting</span><span class="job-date">Jan 2020 - Apr 2021</span></div>
+            <div class="job-role">.NET Software Developer</div>
             <ul class="res-list">
-                <li>Owned enterprise <b>Reporting Services (SSRS)</b> and developed <b>WCF services</b>[cite: 151].</li>
-                <li>Improved SQL performance by 30% through query tuning and stored procedure optimization[cite: 152].</li>
+                <li>Owned enterprise <b>Reporting Services (SSRS)</b> and developed <b>WCF services</b>.</li>
+                <li>Improved SQL performance by 30% through query tuning and stored procedure optimization.</li>
             </ul>
         </div>
 
         <div class="experience-item" style="border:none; padding-bottom:0;">
-            <div class="job-meta"><span class="job-company">Periferia / NEURAL-IT [cite: 153]</span><span class="job-date">2016 - 2019 [cite: 154]</span></div>
-            <div class="job-role">Software Consultant / Web Developer [cite: 153]</div>
+            <div class="job-meta"><span class="job-company">Periferia / NEURAL-IT</span><span class="job-date">2016 - 2019</span></div>
+            <div class="job-role">Software Consultant / Web Developer</div>
             <ul class="res-list">
-                <li>Led banking solution development and managed technical onboarding processes[cite: 155].</li>
-                <li>Developed responsive applications and optimized database structures for client requirements[cite: 156].</li>
+                <li>Led banking solution development and managed technical onboarding processes.</li>
+                <li>Developed responsive applications and optimized database structures for client requirements.</li>
             </ul>
         </div>
 
