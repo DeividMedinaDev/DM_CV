@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg-dark: #0f172a;
-            --sidebar-bg: rgba(30, 41, 59, 0.9);
+            --sidebar-bg: rgba(30, 41, 59, 0.95);
             --accent: #38bdf8;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -19,54 +19,54 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Outfit', sans-serif; background: var(--bg-dark); color: var(--text-main); line-height: 1.25; -webkit-print-color-adjust: exact; }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg-dark); color: var(--text-main); line-height: 1.3; -webkit-print-color-adjust: exact; }
 
         .cv-wrapper {
-            display: grid; grid-template-columns: 240px 1fr;
-            max-width: 1050px; margin: 0 auto;
+            display: grid; grid-template-columns: 300px 1fr;
+            max-width: 1100px; margin: 0 auto;
             background: #0f172a; min-height: 100vh;
         }
 
         /* SIDEBAR */
-        .sidebar { background: var(--sidebar-bg); padding: 20px 15px; border-right: 1px solid var(--glass-border); }
-        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--accent); display: block; margin: 0 auto 15px; }
-        .sidebar-section { margin-bottom: 15px; }
-        .sidebar-title { font-size: 0.75rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; border-bottom: 1px solid var(--glass-border); padding-bottom: 2px; }
+        .sidebar { background: var(--sidebar-bg); padding: 30px 20px; border-right: 1px solid var(--glass-border); }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); display: block; margin: 0 auto 20px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); }
+        .sidebar-section { margin-bottom: 22px; }
+        .sidebar-title { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; border-bottom: 1px solid var(--glass-border); padding-bottom: 5px; }
         
-        .contact-item { display: flex; align-items: center; gap: 6px; color: var(--text-muted); font-size: 0.65rem; margin-bottom: 4px; text-decoration: none; word-break: break-all; }
-        .contact-item i { color: var(--accent); width: 12px; text-align: center; }
+        .contact-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.75rem; margin-bottom: 8px; text-decoration: none; overflow-wrap: anywhere; }
+        .contact-item i { color: var(--accent); width: 16px; flex-shrink: 0; }
 
-        .tag-cloud { display: flex; flex-wrap: wrap; gap: 3px; }
-        .tag { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); padding: 1px 5px; border-radius: 3px; font-size: 0.6rem; color: #cbd5e1; }
+        .tag-cloud { display: flex; flex-wrap: wrap; gap: 5px; }
+        .tag { background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); padding: 3px 8px; border-radius: 5px; font-size: 0.68rem; color: #e2e8f0; }
 
         /* MAIN CONTENT */
-        .main-content { padding: 25px 30px; }
-        header { margin-bottom: 10px; }
-        header h1 { font-size: 2.4rem; letter-spacing: -1.5px; margin-bottom: 0px; line-height: 1; }
-        .subtitle { color: var(--accent); font-size: 1.1rem; font-weight: 500; margin-bottom: 8px; }
+        .main-content { padding: 35px 45px; }
+        header { margin-bottom: 20px; }
+        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 4px; line-height: 1; }
+        .subtitle { color: var(--accent); font-size: 1.2rem; font-weight: 500; }
 
-        .summary-text { color: var(--text-muted); font-size: 0.78rem; margin-bottom: 15px; text-align: justify; line-height: 1.35; }
+        .summary-text { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 25px; text-align: justify; line-height: 1.45; }
 
-        .section-header { display: flex; align-items: center; gap: 6px; font-size: 0.85rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); padding-bottom: 3px; letter-spacing: 1px; }
+        .section-header { display: flex; align-items: center; gap: 10px; font-size: 1rem; color: #fff; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); padding-bottom: 6px; letter-spacing: 1px; }
         .section-header i { color: var(--accent); }
 
-        .experience-item { position: relative; padding-left: 12px; border-left: 1px solid var(--glass-border); padding-bottom: 12px; }
-        .experience-item::before { content: ''; position: absolute; left: -4px; top: 4px; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; }
-        
-        .job-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px; }
-        .job-company { font-weight: 700; color: #fff; font-size: 0.85rem; }
-        .job-date { font-size: 0.65rem; color: var(--text-muted); }
-        .job-role { color: var(--accent); font-size: 0.78rem; font-weight: 600; margin-bottom: 3px; }
+        .experience-item { position: relative; padding-left: 18px; border-left: 1px solid var(--glass-border); padding-bottom: 15px; }
+        .experience-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent); }
+        .job-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
+        .job-company { font-weight: 700; color: #fff; font-size: 0.9rem; }
+        .job-date { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
+        .job-role { color: var(--accent); font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
         
         .res-list { list-style: none; }
-        .res-list li { font-size: 0.74rem; color: var(--text-muted); margin-bottom: 2px; position: relative; padding-left: 10px; line-height: 1.25; }
+        .res-list li { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 3px; position: relative; padding-left: 12px; line-height: 1.35; }
         .res-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
         @media print {
             body { background: white; color: black; }
-            .cv-wrapper { grid-template-columns: 200px 1fr; max-width: 100%; box-shadow: none; }
-            .sidebar { background: #f1f5f9 !important; border-right: 1px solid #cbd5e1; }
-            .tag { background: #e2e8f0 !important; color: #334155 !important; border: 1px solid #94a3b8; }
+            .cv-wrapper { grid-template-columns: 240px 1fr; max-width: 100%; box-shadow: none; }
+            .sidebar { background: #f8fafc !important; border-right: 1px solid #cbd5e1; }
+            .tag { background: #f1f5f9 !important; color: #334155 !important; border: 1px solid #94a3b8; }
+            .main-content { padding: 25px; }
         }
     </style>
 </head>
@@ -79,18 +79,18 @@
         <div class="sidebar-section">
             <h3 class="sidebar-title">Contact</h3>
             <div class="contact-item"><i class="fa-solid fa-phone"></i> (+57) 322 438 8760</div>
-            <div class="contact-item"><i class="fa-regular fa-envelope"></i> Deividmedina...</div>
+            <div class="contact-item"><i class="fa-regular fa-envelope"></i> Deividmedinahernandez@gmail.com</div>
             <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</div>
             <a href="https://deividmedinadev.github.io/DM_CV/" class="contact-item" style="text-decoration: none;">
-                <i class="fa-solid fa-globe"></i> deividmedinadev...
+                <i class="fa-solid fa-globe"></i> deividmedinadev.github.io/DM_CV/
             </a>
         </div>
 
         <div class="sidebar-section">
             <h3 class="sidebar-title">Certifications</h3>
-            <p style="font-size: 0.65rem; font-weight: 600; color: #fff;">Azure Fundamentals (AZ-900)</p>
-            <p style="font-size: 0.65rem; font-weight: 600; color: #fff;">SOLID Principles (C#)</p>
-            <p style="font-size: 0.65rem; font-weight: 600; color: #fff;">Clean Code (C#)</p>
+            <p style="font-size: 0.72rem; font-weight: 600; color: #fff; margin-bottom: 4px;">Azure Fundamentals (AZ-900)</p>
+            <p style="font-size: 0.72rem; font-weight: 600; color: #fff; margin-bottom: 4px;">SOLID Principles with C#</p>
+            <p style="font-size: 0.72rem; font-weight: 600; color: #fff;">Clean Code with C#</p>
         </div>
 
         <div class="sidebar-section">
@@ -109,14 +109,14 @@
 
         <div class="sidebar-section">
             <h3 class="sidebar-title">Education</h3>
-            <p style="font-size: 0.68rem; font-weight: 600; color: #fff;">B.S. Software Engineering</p>
-            <p style="font-size: 0.6rem; color: var(--text-muted);">Uniempresarial (2021)</p>
+            <p style="font-size: 0.78rem; font-weight: 600; color: #fff;">B.S. Software Engineering</p>
+            <p style="font-size: 0.7rem; color: var(--text-muted);">Uniempresarial (2021)</p>
         </div>
 
         <div class="sidebar-section">
             <h3 class="sidebar-title">Languages</h3>
-            <p style="font-size: 0.7rem;">English <span style="color:var(--text-muted)">(Professional)</span></p>
-            <p style="font-size: 0.7rem;">Spanish <span style="color:var(--text-muted)">(Native)</span></p>
+            <p style="font-size: 0.75rem;">English <span style="color:var(--text-muted)">(Professional)</span></p>
+            <p style="font-size: 0.75rem;">Spanish <span style="color:var(--text-muted)">(Native)</span></p>
         </div>
     </aside>
 
@@ -127,23 +127,21 @@
         </header>
 
         <p class="summary-text">
-            Software Engineer specializing in leading digital transformation and cloud modernization within the .NET ecosystem[cite: 111]. 
-            Designing scalable, event-driven microservices in Microsoft Azure, using C#, Minimal APIs, and Clean Architecture to solve complex business challenges[cite: 112]. 
-            Focus on DevOps, facilitating the transition from legacy systems to resilient, containerized cloud-native architectures using Kubernetes and Terraform[cite: 113]. 
-            Through the implementation of Domain-Driven Design (DDD) and database optimization with T-SQL and PL-SQL, I ensure the delivery of high-performance backend systems[cite: 114].
+            Software Engineer specializing in leading digital transformation and cloud modernization within the .NET ecosystem. 
+            I have solid experience in designing scalable, event-driven microservices in Microsoft Azure, using C#, Minimal APIs, and Clean Architecture to solve complex business challenges. 
+            My focus is on DevOps, facilitating the transition from legacy systems to resilient, containerized cloud-native architectures using Kubernetes and Terraform. 
+            Through the implementation of Domain-Driven Design (DDD) and database optimization with T-SQL and PL-SQL, I ensure the delivery of high-performance backend systems for global projects.
         </p>
 
-        <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Experience</h3>
+        <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Professional Experience</h3>
 
         <div class="experience-item">
             <div class="job-meta"><span class="job-company">Talentus</span><span class="job-date">Nov 2025 - Jan 2026</span></div>
             <div class="job-role">Senior Azure .NET Developer</div>
             <ul class="res-list">
-                <li>Architected <b>Azure Functions</b> to integrate educational portals (Moodle, Brightspace, Slate, Elementor) with cloud-native backends[cite: 119].</li>
-                <li>Modernized legacy systems into scalable, efficient <b>microservices using .NET 10</b> and Clean Architecture[cite: 120].</li>
-                <li>Implemented monitoring and alerting strategies to optimize the development lifecycle for high-availability environments[cite: 121].</li>
-                <li>Bridged DevOps and backend services via serverless cloud-native backends[cite: 111, 113].</li>
-                <li>Collaborated with cross-functional teams to support high-demand educational platform requirements[cite: 121].</li>
+                <li>Architected <b>Azure Functions</b> to integrate educational portals (Moodle, Brightspace, Slate, Elementor) with cloud-native backends.</li>
+                <li>Modernized legacy systems into scalable, efficient <b>microservices using .NET 10</b> and Clean Architecture.</li>
+                <li>Collaborated with cross-functional teams to implement robust monitoring and alerting strategies, optimizing the SDLC.</li>
             </ul>
         </div>
 
@@ -151,14 +149,12 @@
             <div class="job-meta"><span class="job-company">CBTW Americas (Travel Edge / Litmos)</span><span class="job-date">Sept 2023 - Sept 2025</span></div>
             <div class="job-role">Backend Senior Software Developer - .NET</div>
             <ul class="res-list">
-                <li>Led modernization initiatives upgrading legacy systems to <b>.NET 8</b>, improving maintainability and performance[cite: 49].</li>
-                <li>Architected and implemented CI/CD pipelines using GitHub Workflows, reducing deployment time by 60%[cite: 49].</li>
-                <li>Designed and deployed infrastructure as code using <b>Terraform</b> for automated cloud provisioning[cite: 50].</li>
-                <li>Managed Azure releases and deployment strategies across multiple environments[cite: 51].</li>
-                <li>Collaborated with Travel Edge to refactor critical booking and reservation systems[cite: 52].</li>
-                <li>Worked with Litmos on learning management platform optimization and feature development[cite: 53].</li>
-                <li>Applied Clean Code principles and <b>SOLID</b> design patterns to legacy systems[cite: 54].</li>
-                <li>Mentored junior developers on best practices for code quality and automated testing[cite: 55].</li>
+                <li>Led modernization initiatives upgrading legacy systems to <b>.NET 8</b>, improving maintainability and performance.</li>
+                <li>Architected and implemented CI/CD pipelines using GitHub Workflows, reducing deployment time by 60%.</li>
+                <li>Designed and deployed infrastructure as code using <b>Terraform</b> for automated cloud provisioning.</li>
+                <li>Collaborated with Travel Edge to refactor critical booking and reservation systems.</li>
+                <li>Applied Clean Code principles and <b>SOLID</b> design patterns to legacy systems.</li>
+                <li>Mentored junior developers on best practices for code quality and automated testing.</li>
             </ul>
         </div>
 
@@ -166,12 +162,11 @@
             <div class="job-meta"><span class="job-company">SoftwareOne (General Electric)</span><span class="job-date">Oct 2021 - Sept 2023</span></div>
             <div class="job-role">.NET Software Engineer / Development Engineer</div>
             <ul class="res-list">
-                <li>Developed and maintained enterprise applications serving <b>General Electric's</b> global operations[cite: 59].</li>
-                <li>Built robust Cron Jobs for automated task scheduling and execution[cite: 59].</li>
-                <li>Designed and implemented <b>Minimal APIs</b> for microservices architecture[cite: 60].</li>
-                <li>Optimized <b>T-SQL scripts</b> improving database query performance by 40%[cite: 60].</li>
-                <li>Provided critical support for ServiceNow incidents and bug resolutions[cite: 60].</li>
-                <li>Collaborated with cross-functional teams to deliver new features on schedule[cite: 60].</li>
+                <li>Developed and maintained enterprise applications serving <b>General Electric's</b> global operations.</li>
+                <li>Built robust Cron Jobs for automated task scheduling and execution.</li>
+                <li>Designed and implemented <b>Minimal APIs</b> for microservices architecture.</li>
+                <li>Optimized <b>T-SQL scripts</b>, improving database query performance by 40%.</li>
+                <li>Provided critical support for ServiceNow incidents and bug resolutions.</li>
             </ul>
         </div>
 
@@ -179,13 +174,11 @@
             <div class="job-meta"><span class="job-company">In Motion / Arroyo Consulting (Deloitte)</span><span class="job-date">Apr 2021 - Oct 2021</span></div>
             <div class="job-role">.NET Developer</div>
             <ul class="res-list">
-                <li>Spearheaded DevOps initiatives with <b>Azure DevOps</b> and PowerShell for multi-env deployments[cite: 64].</li>
-                <li>Designed <b>ARM templates</b> for Infrastructure as Code (IaC) deployment[cite: 64].</li>
-                <li>Implemented <b>ServiceBus</b> and message queues for reliable asynchronous communication[cite: 64].</li>
-                <li>Created <b>Azure Function timer triggers</b> for scheduled background processing[cite: 65].</li>
-                <li>Managed production support operations, resolving ServiceNow tickets with 95% SLA compliance[cite: 66].</li>
-                <li>Utilized <b>AppInsights</b> for transaction tracking and performance monitoring[cite: 66].</li>
-                <li>Conducted thorough unit testing ensuring code quality and reliability[cite: 67].</li>
+                <li>Spearheaded DevOps initiatives with <b>Azure DevOps</b> and PowerShell for multi-env deployments.</li>
+                <li>Designed <b>ARM templates</b> for IaC deployment and implemented Azure Function timer triggers.</li>
+                <li>Implemented <b>ServiceBus</b> and message queues for reliable asynchronous communication.</li>
+                <li>Utilized <b>AppInsights</b> for transaction tracking and performance monitoring.</li>
+                <li>Conducted thorough unit testing ensuring code quality and reliability.</li>
             </ul>
         </div>
 
@@ -193,42 +186,24 @@
             <div class="job-meta"><span class="job-company">ITBF Consulting (Efecty)</span><span class="job-date">Jan 2020 - Apr 2021</span></div>
             <div class="job-role">.NET Software Developer</div>
             <ul class="res-list">
-                <li>Owned and maintained enterprise <b>Reporting Services (SSRS)</b> for business intelligence[cite: 71].</li>
-                <li>Developed <b>WCF services</b> for secure inter-application communication[cite: 71].</li>
-                <li>Consulted on SQL best practices leading to 30% improvement in query performance[cite: 71].</li>
-                <li>Built Windows Services for background processing and system automation[cite: 71].</li>
-                <li>Optimized T-SQL database objects including stored procedures and functions[cite: 71].</li>
-                <li>Managed application deployment across Dev, Stage, and Production environments[cite: 71].</li>
-            </ul>
-        </div>
-
-        <div class="experience-item">
-            <div class="job-meta"><span class="job-company">Periferia IT Group (BBVA)</span><span class="job-date">May 2019 - Oct 2019</span></div>
-            <div class="job-role">Software Consultant</div>
-            <ul class="res-list">
-                <li>Led development team in delivering banking solutions for BBVA's digital platform[cite: 74].</li>
-                <li>Maintained direct communication with stakeholders ensuring project alignment[cite: 74].</li>
-                <li>Planned and estimated sprint iterations using <b>Agile</b> methodologies[cite: 74].</li>
-                <li>Owned onboarding process for new team members, reducing ramp-up time by 50%[cite: 75].</li>
-                <li>Developed REST and SOAP services for seamless system integrations[cite: 76].</li>
+                <li>Owned and maintained enterprise <b>Reporting Services (SSRS)</b> for business intelligence.</li>
+                <li>Developed <b>WCF services</b> for secure inter-application communication.</li>
+                <li>Consulted on SQL best practices leading to 30% improvement in query performance.</li>
+                <li>Optimized T-SQL database objects including stored procedures and functions.</li>
             </ul>
         </div>
 
         <div class="experience-item" style="border:none; padding-bottom:0;">
-            <div class="job-meta"><span class="job-company">Contacto / Neural-IT / Storage Tech (Telefonica)</span><span class="job-date">2016 - 2018</span></div>
-            <div class="job-role">Junior to Mid .NET Developer</div>
+            <div class="job-meta"><span class="job-company">Periferia / Neural-IT / Storage Tech</span><span class="job-date">2016 - 2019</span></div>
+            <div class="job-role">Software Consultant / Web Developer</div>
             <ul class="res-list">
-                <li>Developed full-stack portfolio collection system for <b>Telefonica</b>[cite: 80].</li>
-                <li>Engaged in direct client communication for requirements gathering[cite: 81].</li>
-                <li>Implemented frontend and backend solutions with database integration[cite: 82].</li>
-                <li>Contributed to full-stack development projects as part of the core team[cite: 86].</li>
-                <li>Managed database design and implementation for multiple applications[cite: 86].</li>
-                <li>Developed responsive frontend interfaces and robust backend services[cite: 86].</li>
+                <li>Led banking solution development (BBVA) and managed technical onboarding processes.</li>
+                <li>Developed responsive applications and optimized database structures for client requirements.</li>
+                <li>Developed full-stack portfolio collection system for <b>Telefonica</b>.</li>
             </ul>
         </div>
 
     </main>
 </div>
-
 </body>
 </html>
