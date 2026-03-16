@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deivid Medina | Senior Backend & Azure Engineer</title>
+    <title>Deivid Medina | Senior Azure .NET Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     <style>
         :root {
             --bg-dark: #0f172a;
-            --sidebar-bg: rgba(30, 41, 59, 0.5);
+            --sidebar-bg: rgba(30, 41, 59, 0.8);
             --accent: #38bdf8;
             --text-main: #f8fafc;
             --text-muted: #94a3b8;
@@ -19,113 +19,48 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-main);
-            line-height: 1.4;
-            -webkit-print-color-adjust: exact;
-        }
+        body { font-family: 'Outfit', sans-serif; background: var(--bg-dark); color: var(--text-main); line-height: 1.25; -webkit-print-color-adjust: exact; }
 
-        /* Contenedor Principal de 2 Columnas */
         .cv-wrapper {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(15, 23, 42, 0.95);
-            min-height: 100vh;
-            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+            display: grid; grid-template-columns: 260px 1fr;
+            max-width: 1000px; margin: 0 auto;
+            background: #0f172a; min-height: 100vh;
         }
 
-        /* COLUMNA IZQUIERDA (Sidebar) */
-        .sidebar {
-            background: var(--sidebar-bg);
-            padding: 30px 20px;
-            border-right: 1px solid var(--glass-border);
-        }
-
-        .profile-img {
-            width: 140px; height: 140px; border-radius: 50%;
-            border: 3px solid var(--accent);
-            display: block; margin: 0 auto 20px;
-        }
-
-        .sidebar-section { margin-bottom: 25px; }
-        .sidebar-title {
-            font-size: 0.9rem; color: var(--accent);
-            text-transform: uppercase; letter-spacing: 1.5px;
-            margin-bottom: 12px; border-bottom: 1px solid var(--glass-border);
-            padding-bottom: 5px;
-        }
-
-        .contact-link {
-            display: flex; align-items: center; gap: 10px;
-            color: var(--text-muted); font-size: 0.8rem;
-            text-decoration: none; margin-bottom: 8px;
-        }
-
-        .skill-group { margin-bottom: 15px; }
-        .skill-group h4 { font-size: 0.8rem; color: #fff; margin-bottom: 5px; }
+        /* SIDEBAR */
+        .sidebar { background: var(--sidebar-bg); padding: 20px; border-right: 1px solid var(--glass-border); }
+        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); display: block; margin: 0 auto 15px; }
+        .sidebar-section { margin-bottom: 18px; }
+        .sidebar-title { font-size: 0.8rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; border-bottom: 1px solid var(--glass-border); padding-bottom: 3px; }
+        .contact-link { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.72rem; text-decoration: none; margin-bottom: 5px; }
         .tag-cloud { display: flex; flex-wrap: wrap; gap: 4px; }
-        .tag {
-            background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 3px 8px; border-radius: 4px; font-size: 0.7rem; color: #cbd5e1;
-        }
+        .tag { background: rgba(56, 189, 248, 0.1); border: 1px solid rgba(56, 189, 248, 0.2); padding: 2px 6px; border-radius: 4px; font-size: 0.65rem; color: #cbd5e1; }
 
-        /* COLUMNA DERECHA (Main Content) */
-        .main-content { padding: 40px; }
-        
-        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 5px; }
-        .subtitle { color: var(--accent); font-size: 1.2rem; font-weight: 500; margin-bottom: 20px; }
+        /* MAIN CONTENT */
+        .main-content { padding: 25px 35px; }
+        header h1 { font-size: 2.4rem; letter-spacing: -1px; margin-bottom: 2px; line-height: 1; }
+        .subtitle { color: var(--accent); font-size: 1.1rem; font-weight: 500; margin-bottom: 12px; }
+        .summary-text { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 18px; text-align: justify; line-height: 1.4; }
 
-        .summary-text { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 25px; }
-
-        .section-header {
-            display: flex; align-items: center; gap: 10px;
-            font-size: 1.1rem; color: #fff; margin-bottom: 15px;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
+        .section-header { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); padding-bottom: 4px; }
         .section-header i { color: var(--accent); }
 
-        /* Timeline Compacta */
-        .experience-item {
-            position: relative; padding-left: 20px;
-            border-left: 1px solid var(--glass-border);
-            padding-bottom: 18px;
-        }
-        .experience-item::before {
-            content: ''; position: absolute; left: -4px; top: 6px;
-            width: 7px; height: 7px; background: var(--accent); border-radius: 50%;
-        }
-
+        .experience-item { position: relative; padding-left: 15px; border-left: 1px solid var(--glass-border); padding-bottom: 10px; }
+        .experience-item::before { content: ''; position: absolute; left: -4px; top: 5px; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; }
         .job-meta { display: flex; justify-content: space-between; align-items: baseline; }
-        .job-company { font-weight: 700; color: #fff; font-size: 0.95rem; }
-        .job-date { font-size: 0.75rem; color: var(--text-muted); }
-        .job-role { color: var(--accent); font-size: 0.85rem; font-weight: 500; margin-bottom: 5px; }
-
+        .job-company { font-weight: 700; color: #fff; font-size: 0.82rem; }
+        .job-date { font-size: 0.65rem; color: var(--text-muted); }
+        .job-role { color: var(--accent); font-size: 0.75rem; font-weight: 600; margin-bottom: 2px; }
         .res-list { list-style: none; }
-        .res-list li {
-            font-size: 0.82rem; color: var(--text-muted);
-            margin-bottom: 3px; position: relative; padding-left: 12px;
-        }
+        .res-list li { font-size: 0.72rem; color: var(--text-muted); margin-bottom: 1px; position: relative; padding-left: 10px; line-height: 1.25; }
         .res-list li::before { content: '•'; position: absolute; left: 0; color: var(--accent); }
 
-        /* Ajustes para Impresión */
         @media print {
             body { background: white; color: black; }
-            .cv-wrapper { box-shadow: none; max-width: 100%; grid-template-columns: 240px 1fr; }
-            .sidebar { background: #f1f5f9 !important; border-right: 1px solid #ddd; }
-            .tag { background: #eee !important; color: #444 !important; border: 1px solid #ccc; }
-            .subtitle, .sidebar-title, .job-role, .section-header i { color: #0284c7 !important; }
-            .summary-text, .res-list li, .contact-link { color: #334155 !important; }
-            .job-company { color: #000 !important; }
-        }
-
-        @media (max-width: 768px) {
-            .cv-wrapper { grid-template-columns: 1fr; }
-            .sidebar { border-right: none; border-bottom: 1px solid var(--glass-border); }
+            .cv-wrapper { grid-template-columns: 220px 1fr; max-width: 100%; box-shadow: none; }
+            .sidebar { background: #f1f5f9 !important; border-right: 1px solid #cbd5e1; }
+            .tag { background: #e2e8f0 !important; color: #334155 !important; border: 1px solid #94a3b8; }
+            .main-content { padding: 15px; }
         }
     </style>
 </head>
@@ -137,149 +72,117 @@
         
         <div class="sidebar-section">
             <h3 class="sidebar-title">Contact</h3>
-            <a href="mailto:Deividmedinahernandez@gmail.com" class="contact-link">
-                <i class="fa-regular fa-envelope"></i> Deividmedina...
-            </a>
-            <a href="tel:+573224388760" class="contact-link">
-                <i class="fa-solid fa-phone"></i> (+57) 322 438 8760
-            </a>
-            <div class="contact-link">
-                <i class="fa-solid fa-location-dot"></i> Bogotá, Colombia
-            </div>
-            <a href="https://deividmedinadev.github.io/DM_CV/" class="contact-link">
-                <i class="fa-solid fa-globe"></i> deividmedinadev...
-            </a>
+            <div class="contact-link"><i class="fa-solid fa-phone"></i> (+57) 322 438 8760</div>
+            <div class="contact-link"><i class="fa-regular fa-envelope"></i> Deividmedina...</div>
+            <div class="contact-link"><i class="fa-solid fa-location-dot"></i> Bogotá, Colombia</div>
+            <div class="contact-link"><i class="fa-solid fa-globe"></i> deividmedinadev...</div>
         </div>
 
         <div class="sidebar-section">
-            <h3 class="sidebar-title">Tech Skills</h3>
-            <div class="skill-group">
-                <h4>Backend</h4>
-                <div class="tag-cloud">
-                    <span class="tag">.NET 8/10</span> <span class="tag">C#</span>
-                    <span class="tag">EF Core</span> <span class="tag">MediatR</span>
-                    <span class="tag">DDD</span> <span class="tag">TDD</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <h4>Cloud & Ops</h4>
-                <div class="tag-cloud">
-                    <span class="tag">Azure Functions</span> <span class="tag">AKS</span>
-                    <span class="tag">Terraform</span> <span class="tag">Service Bus</span>
-                    <span class="tag">Docker</span> <span class="tag">CI/CD</span>
-                </div>
-            </div>
-            <div class="skill-group">
-                <h4>Data & Security</h4>
-                <div class="tag-cloud">
-                    <span class="tag">SQL Server</span> <span class="tag">Redis</span>
-                    <span class="tag">OAuth2</span> <span class="tag">Azure AD</span>
-                </div>
+            <h3 class="sidebar-title">Certifications</h3>
+            <p style="font-size: 0.68rem; font-weight: 600; color: #fff; margin-bottom: 3px;">Azure Fundamentals (AZ-900)</p>
+            <p style="font-size: 0.68rem; font-weight: 600; color: #fff; margin-bottom: 3px;">SOLID Principles (C#)</p>
+            <p style="font-size: 0.68rem; font-weight: 600; color: #fff;">Clean Code (C#)</p>
+        </div>
+
+        <div class="sidebar-section">
+            <h3 class="sidebar-title">Technical Skills</h3>
+            <div class="tag-cloud">
+                <span class="tag">.NET 8/10</span> <span class="tag">Azure Functions</span>
+                <span class="tag">AKS</span> <span class="tag">Terraform</span> <span class="tag">C#</span> 
+                <span class="tag">Minimal APIs</span> <span class="tag">Clean Architecture</span>
+                <span class="tag">DDD</span> <span class="tag">T-SQL</span> <span class="tag">PL-SQL</span>
+                <span class="tag">Azure Service Bus</span> <span class="tag">Redis</span>
+                <span class="tag">CI/CD</span> <span class="tag">SQL Server</span> <span class="tag">Azure Cosmos DB</span>
             </div>
         </div>
 
         <div class="sidebar-section">
             <h3 class="sidebar-title">Education</h3>
-            <p style="font-size: 0.8rem; font-weight: 600;">B.S. Software Engineering</p>
-            <p style="font-size: 0.75rem; color: var(--text-muted);">Graduated 2021</p>
+            <p style="font-size: 0.7rem; font-weight: 600; color: #fff;">B.S. Software Engineering</p>
+            <p style="font-size: 0.65rem; color: var(--text-muted);">Uniempresarial (2021)</p>
         </div>
 
         <div class="sidebar-section">
             <h3 class="sidebar-title">Languages</h3>
-            <p style="font-size: 0.8rem;">Spanish <span style="color:var(--text-muted)">(Native)</span></p>
-            <p style="font-size: 0.8rem;">English <span style="color:var(--text-muted)">(B2 - Professional)</span></p>
+            <p style="font-size: 0.7rem;">English <span style="color:var(--text-muted)">(Professional)</span></p>
+            <p style="font-size: 0.7rem;">Spanish <span style="color:var(--text-muted)">(Native)</span></p>
         </div>
     </aside>
 
     <main class="main-content">
         <header>
             <h1>DEIVID MEDINA</h1>
-            <div class="subtitle">Senior Backend & Azure Engineer</div>
+            <div class="subtitle">Senior Azure .NET Developer</div>
         </header>
 
         <p class="summary-text">
-            Senior Backend Engineer with 6+ years in the <b>.NET ecosystem (.NET 8/10)</b> and <b>Azure</b>. 
-            Focused on architecting scalable services through <b>Clean Architecture and TDD</b>. 
-            Proven experience in luxury travel, finance, and education sectors, delivering high-availability cloud solutions.
+            Software Engineer specializing in leading digital transformation and cloud modernization within the .NET ecosystem[cite: 1, 2, 5]. 
+            I have solid experience in designing scalable, event-driven microservices in Microsoft Azure, using C#, Minimal APIs, and Clean Architecture to solve complex business challenges[cite: 6, 12, 40]. 
+            My focus is on DevOps, facilitating the transition from legacy systems to resilient, containerized cloud-native architectures using Kubernetes and Terraform[cite: 7, 19, 20]. 
+            Through the implementation of Domain-Driven Design (DDD) and database optimization with T-SQL and PL-SQL, I ensure the delivery of high-performance backend systems for global projects[cite: 32, 34, 39].
         </p>
 
-        <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Professional Experience</h3>
+        <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Experience</h3>
 
         <div class="experience-item">
-            <div class="job-meta">
-                <span class="job-company">Talentus Global</span>
-                <span class="job-date">Nov 2025 - Jan 2026</span>
-            </div>
-            <div class="job-role">Senior Backend & Azure Engineer</div>
+            <div class="job-meta"><span class="job-company">Talentus</span><span class="job-date">Nov 2025 - Jan 2026</span></div>
+            <div class="job-role">Senior Azure .NET Developer</div>
             <ul class="res-list">
-                <li>Collaborated on <b>Azure Functions</b> implementation for LMS platform integrations.</li>
-                <li>Contributed to modernization into <b>.NET 10 microservices</b> using Clean Architecture.</li>
-                <li>Applied <b>Polly</b> for resilience and retry policies in cloud-native API integrations.</li>
+                <li>Architected <b>Azure Functions</b> to integrate educational portals (Moodle, Brightspace, Slate) with cloud-native backends.</li>
+                <li>Modernized legacy systems into scalable <b>microservices using .NET 10</b> and Clean Architecture.</li>
+                <li>Collaborated to implement monitoring and alerting strategies for high-availability environments.</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta">
-                <span class="job-company">CBTW | Luxury Travel (Traveledge)</span>
-                <span class="job-date">Sept 2023 - Sept 2025</span>
-            </div>
-            <div class="job-role">Backend Senior Software Developer</div>
+            <div class="job-meta"><span class="job-company">CBTW Americas</span><span class="job-date">Sept 2023 - Sept 2025</span></div>
+            <div class="job-role">Backend Senior Software Developer - .NET</div>
             <ul class="res-list">
-                <li>Developed distributed booking engines leveraging <b>RabbitMQ</b> and event-driven logic.</li>
-                <li>Optimized high-traffic travel APIs using <b>EF Core</b> and <b>Redis</b> caching strategies.</li>
-                <li>Secured transaction flows with <b>OAuth2/JWT</b> for global luxury travel partners.</li>
+                <li>Developed microservices with <b>C# and .NET Core</b> using <b>Azure Service Bus</b> for resiliency.</li>
+                <li>Implemented <b>Terraform</b> solutions and managed <b>AKS</b> resources for enterprise-scale applications.</li>
+                <li>Optimized data processing leveraging <b>SQL Server</b> and <b>Redis</b> caching strategies.</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta">
-                <span class="job-company">SoftwareOne</span>
-                <span class="job-date">Oct 2021 - Sept 2023</span>
-            </div>
-            <div class="job-role">Software Engineer (Enterprise Solutions)</div>
+            <div class="job-meta"><span class="job-company">SoftwareOne</span><span class="job-date">Oct 2021 - Sept 2023</span></div>
+            <div class="job-role">.NET Software Engineer / Development Engineer</div>
             <ul class="res-list">
-                <li>Refactored legacy monoliths into <b>Microservices</b> using <b>DDD</b> and <b>SOLID</b>.</li>
-                <li>Tuned <b>SQL Server/Azure SQL</b> performance for financial and operational modules.</li>
-                <li>Automated <b>CI/CD pipelines</b> in Azure DevOps, improving deployment reliability.</li>
+                <li>Built robust enterprise applications for global operations using <b>Minimal APIs</b>[cite: 59, 60].</li>
+                <li>Optimized <b>T-SQL scripts</b>, improving database query performance by 40%.</li>
+                <li>Developed and maintained task scheduling systems and microservices architecture[cite: 59, 60].</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta">
-                <span class="job-company">In Motion / ITBF Consulting</span>
-                <span class="job-date">Jan 2020 - Oct 2021</span>
-            </div>
+            <div class="job-meta"><span class="job-company">In Motion / Arroyo Consulting</span><span class="job-date">Apr 2021 - Oct 2021</span></div>
             <div class="job-role">.NET Developer</div>
             <ul class="res-list">
-                <li>Developed enterprise web applications and RESTful APIs using <b>ASP.NET Core</b>.</li>
-                <li>Modeled relational databases and managed complex data reporting with SSRS.</li>
+                <li>Spearheaded DevOps initiatives with <b>Azure DevOps</b> and <b>PowerShell</b>[cite: 64].</li>
+                <li>Designed <b>ARM templates</b> for IaC and implemented <b>Azure Function</b> timer triggers[cite: 64, 65].</li>
             </ul>
         </div>
 
         <div class="experience-item">
-            <div class="job-meta">
-                <span class="job-company">Periferia IT Group</span>
-                <span class="job-date">May 2019 - Oct 2019</span>
-            </div>
-            <div class="job-role">Software Consultant</div>
+            <div class="job-meta"><span class="job-company">ITBF Consulting</span><span class="job-date">Jan 2020 - Apr 2021</span></div>
+            <div class="job-role">.NET Software Developer</div>
             <ul class="res-list">
-                <li>Provided consulting on architectural design and .NET stack best practices.</li>
+                <li>Owned enterprise <b>Reporting Services (SSRS)</b> and developed <b>WCF services</b>[cite: 71].</li>
+                <li>Improved SQL performance by 30% through query tuning and stored procedure optimization[cite: 71].</li>
             </ul>
         </div>
 
-        <div class="experience-item" style="padding-bottom: 0; border: none;">
-            <div class="job-meta">
-                <span class="job-company">NEURAL-IT</span>
-                <span class="job-date">Aug 2016 - Mar 2017</span>
-            </div>
-            <div class="job-role">Web Developer</div>
+        <div class="experience-item" style="border:none; padding-bottom:0;">
+            <div class="job-meta"><span class="job-company">Periferia / NEURAL-IT</span><span class="job-date">2016 - 2019</span></div>
+            <div class="job-role">Software Consultant / Web Developer</div>
             <ul class="res-list">
-                <li>Developed responsive applications and optimized initial relational database structures.</li>
+                <li>Led banking solution development and managed technical onboarding processes[cite: 74, 75].</li>
+                <li>Developed responsive applications and optimized database structures for client requirements[cite: 86].</li>
             </ul>
         </div>
 
     </main>
 </div>
-
 </body>
 </html>
