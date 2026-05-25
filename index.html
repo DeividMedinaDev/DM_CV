@@ -22,7 +22,7 @@
         body { font-family: 'Outfit', sans-serif; background: var(--bg-dark); color: var(--text-main); line-height: 1.3; }
 
         .cv-wrapper {
-            display: grid; grid-template-columns: 280px 1fr;
+            display: grid; grid-template-columns: 220px 1fr;
             max-width: 1050px; margin: 0 auto;
             background: #0f172a; min-height: 100vh;
             -webkit-print-color-adjust: exact !important;
@@ -32,13 +32,13 @@
         /* SIDEBAR */
         .sidebar { 
             background: var(--sidebar-bg) !important; 
-            padding: 30px 20px; 
+            padding: 25px 15px; 
             border-right: 1px solid var(--glass-border);
             -webkit-print-color-adjust: exact !important;
             print-color-adjust: exact !important;
         }
-        .profile-img { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--accent); display: block; margin: 0 auto 20px; }
-        .sidebar-section { margin-bottom: 22px; }
+        .profile-img { width: 110px; height: 110px; border-radius: 50%; border: 3px solid var(--accent); display: block; margin: 0 auto 12px; }
+        .sidebar-section { margin-bottom: 16px; }
         .sidebar-title { font-size: 0.85rem; color: var(--accent); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px; border-bottom: 1px solid var(--glass-border); padding-bottom: 5px; }
         
         .contact-item { display: flex; align-items: center; gap: 10px; color: var(--text-muted); font-size: 0.75rem; margin-bottom: 8px; text-decoration: none; word-break: break-all; }
@@ -48,32 +48,32 @@
         .tag { background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); padding: 3px 8px; border-radius: 5px; font-size: 0.68rem; color: #e2e8f0; }
 
         /* MAIN CONTENT */
-        .main-content { padding: 35px 45px; background: var(--bg-dark); }
-        header { margin-bottom: 20px; }
-        header h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 4px; line-height: 1; }
-        .subtitle { color: var(--accent); font-size: 1.2rem; font-weight: 500; }
+        .main-content { padding: 25px 35px; background: var(--bg-dark); }
+        header { margin-bottom: 15px; }
+        header h1 { font-size: 2.5rem; letter-spacing: -1px; margin-bottom: 4px; line-height: 1; }
+        .subtitle { color: var(--accent); font-size: 1.15rem; font-weight: 500; }
 
-        .summary-text { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 25px; text-align: justify; line-height: 1.45; }
+        .summary-text { color: var(--text-muted); font-size: 0.82rem; margin-bottom: 18px; text-align: justify; line-height: 1.4; }
 
-        .section-header { display: flex; align-items: center; gap: 10px; font-size: 1rem; color: #fff; margin-bottom: 15px; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); padding-bottom: 6px; letter-spacing: 1px; }
+        .section-header { display: flex; align-items: center; gap: 10px; font-size: 0.95rem; color: #fff; margin-bottom: 10px; text-transform: uppercase; border-bottom: 1px solid var(--glass-border); padding-bottom: 6px; letter-spacing: 1px; }
         .section-header i { color: var(--accent); }
-
-        .experience-item { position: relative; padding-left: 18px; border-left: 1px solid var(--glass-border); padding-bottom: 15px; }
+ 
+        .experience-item { position: relative; padding-left: 18px; border-left: 1px solid var(--glass-border); padding-bottom: 10px; }
         .experience-item::before { content: ''; position: absolute; left: -5px; top: 6px; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 8px var(--accent); }
         .job-meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
-        .job-company { font-weight: 700; color: #fff; font-size: 0.9rem; }
-        .job-date { font-size: 0.7rem; color: var(--text-muted); font-weight: 500; }
-        .job-role { color: var(--accent); font-size: 0.82rem; font-weight: 600; margin-bottom: 5px; }
+        .job-company { font-weight: 700; color: #fff; font-size: 0.85rem; }
+        .job-date { font-size: 0.68rem; color: var(--text-muted); font-weight: 500; }
+        .job-role { color: var(--accent); font-size: 0.78rem; font-weight: 600; margin-bottom: 4px; }
         
         .res-list { list-style: none; }
-        .res-list li { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 3px; position: relative; padding-left: 12px; line-height: 1.35; }
+        .res-list li { font-size: 0.75rem; color: var(--text-muted); margin-bottom: 2px; position: relative; padding-left: 12px; line-height: 1.3; }
         .res-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); font-weight: bold; }
 
         /* FIX PARA PDF */
         @media print {
             body { background: white; color: black; }
             .cv-wrapper { 
-                grid-template-columns: 280px 1fr; 
+                grid-template-columns: 220px 1fr; 
                 max-width: 100%; 
                 box-shadow: none; 
                 display: grid !important; 
@@ -155,7 +155,7 @@
         </header>
 
         <p class="summary-text">
-            Software Engineer contributing to digital transformation and cloud modernization within the .NET ecosystem. I have solid experience in designing scalable, event-driven microservices in Microsoft Azure, using C#, Minimal APIs, and Clean Architecture to solve complex business challenges. My focus is on DevOps, facilitating the transition from legacy systems to resilient, containerized cloud-native architectures using Kubernetes and Terraform. Through the implementation of Domain-Driven Design (DDD) and database optimization with T-SQL and PL-SQL, I ensure the delivery of high-performance backend systems for global projects.
+            Software Engineer focused on digital transformation and cloud modernization within the .NET ecosystem. Experienced in designing scalable, event-driven microservices on Microsoft Azure using C#, Minimal APIs, and Clean Architecture. Strong background in DevOps, containerization (Kubernetes, Docker), and IaC (Terraform). Committed to delivering high-performance backend systems leveraging DDD and T-SQL/PL-SQL database optimization.
         </p>
 
         <h3 class="section-header"><i class="fa-solid fa-briefcase"></i> Experience</h3>
